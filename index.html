@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nurospectrum: a Nigeria that works with and for neurodivergent minds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F6F5;--surface:#FFFFFF;--ink:#1D1A2F;--muted:#55546B;--line:#D5D9DA;--green:#0F6B4F;--indigo:#3A3FA8;--gold:#E9B02A;--rose:#C23A7B;--on:#fff;
+--head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12111F;--surface:#1D1B33;--ink:#EEEDF7;--muted:#B0AFC8;--line:#35334F;--green:#3DC59B;--indigo:#8A8FF5;--gold:#F2C14E;--rose:#EE76AB;--on:#12111F}}
+:root[data-theme="dark"]{--bg:#12111F;--surface:#1D1B33;--ink:#EEEDF7;--muted:#B0AFC8;--line:#35334F;--green:#3DC59B;--indigo:#8A8FF5;--gold:#F2C14E;--rose:#EE76AB;--on:#12111F}
+html{scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:light dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.1rem/1.7 var(--body)}
+body[data-calm]{filter:saturate(.55)}
+body[data-calm] *{transition:none!important}
+a{color:inherit}:focus-visible{outline:3px solid var(--indigo);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header{padding:1rem 0;border-bottom:1px solid var(--line)}
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem}
+.logo{font:800 1.4rem var(--head);text-decoration:none;letter-spacing:-.02em}
+nav{display:flex;flex-wrap:wrap;gap:.25rem 1.1rem;font-family:var(--head);font-weight:600}
+nav a{text-decoration:none;color:var(--muted);padding:.25rem 0;border-bottom:3px solid transparent}
+nav a[aria-current="page"]{color:var(--ink);border-color:var(--gold)}
+nav a:hover{color:var(--ink)}
+.lang{width:auto;font:600 .9rem var(--head);padding:.3rem .5rem}
+.calm{font:600 .9rem var(--head);background:none;border:2px solid var(--line);color:var(--ink);padding:.3rem .7rem;cursor:pointer}
+.calm[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+h1,h2,h3{font-family:var(--head);letter-spacing:-.02em;line-height:1.1;margin:0 0 1rem}
+h1{font-weight:800;font-size:clamp(2.4rem,7vw,4.6rem);max-width:18ch}
+h2{font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem)}
+h3{font-weight:600;font-size:1.3rem}
+.sec{padding:3.5rem 0}
+.lede{font-size:1.25rem;max-width:36rem;color:var(--muted)}
+.btn{display:inline-block;font:700 1rem var(--head);padding:.8rem 1.4rem;background:var(--ink);color:var(--bg);border:0;text-decoration:none;cursor:pointer}
+.btn.alt{background:none;color:var(--ink);border:2px solid var(--ink)}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.weave{display:grid;gap:3px;margin:2.5rem 0 0}
+.weave div{height:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.path{border-top:8px solid var(--c);padding-top:1rem}
+.path p{color:var(--muted);margin:0 0 .75rem}
+.path a{font-weight:700;color:var(--ink)}
+.statement{background:var(--ink);color:var(--bg)}
+.statement p{max-width:40rem;margin:0 0 1.25rem}
+.statement b{font-family:var(--head);color:var(--gold)}
+.ev{display:grid;grid-template-columns:5.5rem 1fr;gap:1.25rem;padding:1.25rem 0;border-top:1px solid var(--line)}
+.date{font:800 1.9rem/1 var(--head);text-align:center;border-right:6px solid var(--c);padding-right:1rem}
+.date small{display:block;font:600 .85rem var(--head);color:var(--muted)}
+.ev p{margin:0;color:var(--muted)}
+.post{display:block;text-decoration:none;padding:1.5rem 0 1.5rem 1.25rem;border-top:1px solid var(--line);border-left:8px solid var(--c)}
+.post h2{font-size:1.6rem;margin-bottom:.4rem}
+.post:hover h2{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.post p{margin:0;color:var(--muted);max-width:40rem}
+.tag{font:600 .9rem var(--head);color:var(--c)}
+.read{max-width:40rem;margin:0 auto}
+.read h1{font-size:clamp(2rem,6vw,3rem);max-width:none}
+.read p{margin:0 0 1.2rem}
+.note{border-left:8px solid var(--c);background:var(--surface);padding:1rem 1.25rem;margin:1.5rem 0;font-weight:700}
+.src{font-size:.95rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;margin-top:2rem}
+.back{background:none;border:0;font:600 1rem var(--head);color:var(--muted);cursor:pointer;padding:0;margin-bottom:1.5rem}
+.states{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0}
+.chip{font:600 .95rem var(--head);padding:.45rem .85rem;background:var(--surface);color:var(--ink);border:2px solid var(--line);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--on)}
+.panel{background:var(--surface);border-top:8px solid var(--green);padding:1.75rem}
+form{display:grid;gap:1rem;max-width:30rem}
+label{font:600 .95rem var(--head);display:grid;gap:.3rem}
+input,select,textarea{font:inherit;font-size:1rem;padding:.65rem .8rem;border:2px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:6rem}
+.out{font-family:var(--head);font-weight:600;min-height:1.5rem}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
+@media(max-width:700px){.two,.paths{grid-template-columns:1fr}.ev{grid-template-columns:4.5rem 1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="logo" href="#home">Nurospectrum</a>
+  <nav id="nav" aria-label="Main">
+    <a href="#home" data-p="home">Home</a><a href="#blog" data-p="blog">Blog</a><a href="#community" data-p="community">Community</a><a href="#partners" data-p="partners">Partner with us</a>
+  </nav>
+  <select class="lang" id="lang" aria-label="Language"><option value="0">English</option><option value="1">Hausa</option><option value="2">Yorùbá</option><option value="3">Igbo</option></select>
+  <button class="calm" id="calm" type="button" aria-pressed="false" title="Mutes colours and removes motion">Calm view</button>
+</div></header>
+<main id="app" tabindex="-1"></main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+var $=function(s){return document.querySelector(s)};
+var app=$("#app");
+var COL=["var(--green)","var(--indigo)","var(--gold)","var(--rose)"];
+function weave(){
+  var w='<div class="weave" aria-hidden="true">';
+  [[8,3,14,5,9],[4,12,6,10,3],[11,5,8,4,13],[6,9,3,12,7]].forEach(function(r,i){
+    var s=[],t=0,tot=r.reduce(function(a,b){return a+b},0);
+    r.forEach(function(n,j){var c=COL[(i+j)%4],a=t/tot*100;t+=n;s.push(c+" "+a+"% "+(t/tot*100)+"%")});
+    w+='<div style="background:linear-gradient(90deg,'+s.join(",")+')"></div>';
+  });
+  return w+"</div>";
+}
+var EVENTS=[
+ {d:"14",m:"Nov",t:"Understanding ADHD: an open evening for families",p:"A plain-language talk and Q&A for parents, siblings and friends. Online and free.",c:COL[0]},
+ {d:"05",m:"Dec",t:"Sensory-friendly meet-up for neurodivergent adults",p:"A quieter, low-pressure space to meet others. Lagos, with an online room.",c:COL[1]},
+ {d:"23",m:"Jan",t:"Inclusive classrooms workshop for teachers",p:"Practical adjustments teachers can make this term without special equipment.",c:COL[3]}
+];
+var POSTS=[
+{id:"post-words",tag:"Basics",c:COL[1],title:"Neurodiverse or neurodivergent? The words matter",dek:"Two similar words with different meanings, and why we use both.",
+ b:["Neurodiversity describes the natural variation in how human brains work. It is a fact about a group, like biodiversity. A classroom, a family or a country can be neurodiverse.","Neurodivergent describes an individual whose brain works differently from what is typically expected. That includes people who are autistic, have ADHD or dyslexia, and others. The term neurotypical describes people whose thinking fits that typical expectation.","The word neurodiversity was popularised in the late 1990s by the sociologist Judy Singer. The idea behind it is simple: differences in thinking are part of human variety, and people do better when environments adapt instead of expecting everyone to fit one mould."],
+ n:"A person is neurodivergent. A community is neurodiverse.",
+ s:"Singer, J. (1999). “Why can’t you be normal for once in your life?” In Disability Discourse. Open University Press."},
+{id:"post-class",tag:"Education",c:COL[0],title:"Five signs a classroom isn’t working for a neurodivergent student",dek:"Often it is not about effort. It is about the environment.",
+ b:["A student who looks distracted, restless or withdrawn may be reacting to noise, unclear instructions or long stretches of passive listening. Labelling them lazy hides the real cause.","Watch for repeated incomplete work despite clear ability, strong distress at changes in routine, avoiding reading or writing aloud, difficulty following spoken multi-step instructions, and exhaustion after school.","Many helpful changes cost nothing: written and spoken instructions together, a quiet corner, extra time, and breaking tasks into steps. The Universal Design for Learning framework recommends offering more than one way to take in information and show understanding."],
+ n:"Change the task or space first, then judge the student.",
+ s:"CAST (2018). Universal Design for Learning Guidelines version 2.2. udlguidelines.cast.org"},
+{id:"post-work",tag:"Work",c:COL[2],title:"How to support a neurodivergent colleague",dek:"Small, specific adjustments, agreed with the person, go a long way.",
+ b:["Do not guess what someone needs. Ask: what helps you do your best work? Needs differ widely, even between two people with the same diagnosis.","Common adjustments include written follow-ups after meetings, agendas shared in advance, flexible hours, quieter workspaces and clear, direct feedback.","Research on neurodiversity at work argues that many neurodivergent people bring strengths such as sustained focus, pattern recognition and creative problem solving, but that these show up only when the workplace fits them. Treat strengths and support needs as both true."],
+ n:"Ask, agree, write it down, and review it together.",
+ s:"Doyle, N. (2020). Neurodiversity at work: a biopsychosocial model and the impact on working adults. British Medical Bulletin, 135(1), 108–125."},
+{id:"post-assess",tag:"Support",c:COL[3],title:"If you think your child may be neurodivergent, where to start",dek:"A calm first-steps guide for parents and carers.",
+ b:["Write down what you notice at home and at school: when it happens, how often and what helps. Specific examples are more useful to a professional than general worries.","Speak to your child’s teacher and then to a qualified professional, such as a paediatrician, child psychiatrist or clinical psychologist. Diagnosis should come from a trained clinician, not from online checklists.","The World Health Organization’s ICD-11 describes autism spectrum disorder and ADHD under neurodevelopmental conditions, and clinicians use criteria like these when assessing. While you wait, you can already adjust routines, reduce sensory overload and keep communication kind and clear."],
+ n:"You do not need a diagnosis to start helping.",
+ s:"World Health Organization (2019). ICD-11, Chapter 6: Neurodevelopmental disorders. icd.who.int"}
+];
+var STATES=["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT Abuja","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"];
+var chosen="";
+var LI=0,LANGS=["en","ha","yo","ig"];
+var D={
+nav:[["Home","Blog","Community","Partner with us"],["Gida","Bulogi","Al’umma","Haɗa kai da mu"],["Ilé","Bulọọgi","Àwùjọ","Bá wa ṣiṣẹ́"],["Home","Blọọgụ","Obodo","Soro anyị rụkọọ ọrụ"]],
+calm:["Calm view","Yanayin natsuwa","Ìrísí ìdákẹ́jẹ́ẹ́","Ọnọdụ udo"],
+h1:["A Nigeria that works with and for neurodivergent minds.","Najeriya da ke aiki tare da kuma domin tunanin masu bambancin kwakwalwa.","Orílẹ̀-èdè Nàìjíríà tó ń ṣiṣẹ́ pẹ̀lú àti fún àwọn ọkàn tí ó yàtọ̀.","Naịjirịa na-arụkọ ọrụ n’ime ma maka ọgụgụ isi dị iche."],
+lede:["Nurospectrum is an education and community platform raising awareness of neurodiversity across Nigeria. Every mind is welcome here.","Nurospectrum dandali ne na ilimi da al’umma da ke wayar da kai game da bambancin kwakwalwa (neurodiversity) a faɗin Najeriya. Kowane tunani yana da gurbi a nan.","Nurospectrum jẹ́ pèpéle ẹ̀kọ́ àti àwùjọ tó ń ṣe ìfọ̀rọ̀jíṣẹ́ nípa oríṣiríṣi ọpọlọ (neurodiversity) káàkiri Nàìjíríà. Gbogbo èrò ni a gbà káàbọ̀ níbí.","Nurospectrum bụ ikpo okwu agụmakwụkwọ na obodo na-eme ka mmadụ mara banyere ọdịiche n’ụbụrụ (neurodiversity) n’ofe Naịjirịa niile. Echiche ọ bụla nwere ohere ebe a."],
+joinb:["Join your state community","Shiga al’ummar jiharka","Darapọ̀ mọ́ àwùjọ ìpínlẹ̀ rẹ","Sonye n’obodo steeti gị"],
+learnb:["Start learning","Fara koyo","Bẹ̀rẹ̀ sí kọ́ ẹ̀kọ́","Malite ịmụ ihe"],
+a1t:["I am neurodivergent","Ni mai bambancin kwakwalwa ne","Mo jẹ́ ẹni tí ọpọlọ rẹ̀ yàtọ̀","Abụ m onye ụbụrụ ya dị iche"],
+a1d:["Find people who understand, and a community in your state.","Nemo mutanen da suka fahimce ka, da al’umma a jiharka.","Wá àwọn ènìyàn tó yé ọ, àti àwùjọ ní ìpínlẹ̀ rẹ.","Chọta ndị ghọtara gị, na obodo n’steeti gị."],
+a1l:["Find my community","Nemo al’ummata","Wá àwùjọ mi","Chọta obodo m"],
+a2t:["I want to learn and support","Ina so in koya in kuma tallafa","Mo fẹ́ kọ́ ẹ̀kọ́ kí n sì ṣe àtìlẹ́yìn","Achọrọ m ịmụ ma kwado"],
+a2d:["Clear articles for families, teachers, employers and friends.","Bayanai bayyanannu ga iyalai, malamai, ma’aikata da abokai.","Ìwé tó ṣe kedere fún ẹbí, olùkọ́, agbanisíṣẹ́ àti ọ̀rẹ́.","Ozi doro anya maka ezinụlọ, ndị nkụzi, ndị goro ọrụ na ndị enyi."],
+a2l:["Read the blog","Karanta bulogi","Ka bulọọgi","Gụọ blọọgụ"],
+a3t:["I want to partner or give","Ina so in zama abokin hulɗa ko in ba da gudummawa","Mo fẹ́ jẹ́ alábàáṣiṣẹ́pọ̀ tàbí láti fúnni","Achọrọ m ịbụ onye mmekọ ma ọ bụ inye onyinye"],
+a3d:["Fund, collaborate with or contribute to this work.","Tallafa, ko ku yi aiki tare da mu, ko ku ba da gudummawar ƙwarewa.","Ṣe àtìlẹ́yìn, bá wa ṣiṣẹ́, tàbí pín ọgbọ́n rẹ.","Kwado, soro anyị rụọ ọrụ, ma ọ bụ keta ọgụgụ isi gị."],
+a3l:["Work with us","Yi aiki da mu","Bá wa ṣiṣẹ́","Soro anyị rụọ ọrụ"],
+about:["About us","Game da mu","Nípa wa","Maka anyị"],
+ab1:["Many neurodivergent Nigerians grow up without the words for how they think, or anyone to share it with. Families and teachers often want to help but have little reliable information.","Yawancin ’yan Najeriya masu bambancin kwakwalwa suna girma ba tare da kalmomin bayyana yadda suke tunani ba, ko wanda za su yi magana da shi. Iyalai da malamai sau da yawa suna son taimakawa amma ba su da ingantattun bayanai.","Ọ̀pọ̀ ọmọ Nàìjíríà tí ọpọlọ wọn yàtọ̀ ló ń dàgbà láìní ọ̀rọ̀ láti ṣàlàyé bí wọ́n ṣe ń ronú, tàbí ẹni tí wọ́n lè bá sọ̀rọ̀. Àwọn ẹbí àti olùkọ́ sábà máa ń fẹ́ ràn wọ́n lọ́wọ́ ṣùgbọ́n wọn kò ní ìmọ̀ tó dájú.","Ọtụtụ ndị Naịjirịa ụbụrụ ha dị iche na-eto na-enweghị okwu ịkọwa otu ha si eche echiche, ma ọ bụ onye ha ga-agwa. Ezinụlọ na ndị nkụzi na-achọkarị inyere aka mana ha enweghị ozi ziri ezi."],
+ab2:["Nurospectrum answers both. We publish well-sourced, plain-language articles, build state-by-state communities where “specs” can find each other, and host events that bring families, schools and employers into the conversation.","Nurospectrum na magance duka biyun. Muna wallafa labarai masu sauƙi da tushe, muna gina al’umma a kowace jiha inda “specs” za su sami juna, kuma muna shirya taruka da ke haɗa iyalai, makarantu da ma’aikata.","Nurospectrum ń yanjú méjèèjì. À ń tẹ̀ àwọn àpilẹ̀kọ tó rọrùn, tó ní orísun jáde, à ń kọ́ àwùjọ ní ìpínlẹ̀ kọ̀ọ̀kan níbi tí “specs” ti lè rí ara wọn, a sì ń ṣètò àwọn ìpàdé tó so ẹbí, ilé-ìwé àti ibi iṣẹ́ pọ̀.","Nurospectrum na-azaghachi ha abụọ. Anyị na-ebipụta edemede dị mfe nwere isi iyi, na-ewu obodo n’steeti ọ bụla ebe “specs” nwere ike ịchọta ibe ha, ma na-ahazi emume na-ejikọta ezinụlọ, ụlọ akwụkwọ na ebe ọrụ."],
+ml:["Our mission","Manufarmu","Iṣẹ́ wa","Ọrụ anyị"],
+mt:["To facilitate a Nigeria that works with and for neurodivergent minds.","Mu taimaka wajen samar da Najeriya da ke aiki tare da kuma domin tunanin masu bambancin kwakwalwa.","Láti jẹ́ kí Nàìjíríà ṣiṣẹ́ pẹ̀lú àti fún àwọn ọkàn tí ó yàtọ̀.","Ime ka Naịjirịa na-arụkọ ọrụ n’ime ma maka ọgụgụ isi dị iche."],
+vl:["Our vision","Hangenmu","Ìran wa","Ọhụụ anyị"],
+vt:["An inclusive Nigeria for the neurodiverse population.","Najeriya mai haɗa kowa ga masu bambancin kwakwalwa.","Nàìjíríà tó gba gbogbo ènìyàn, pẹ̀lú àwọn tí ọpọlọ wọn yàtọ̀.","Naịjirịa na-anabata mmadụ niile, gụnyere ndị ụbụrụ ha dị iche."],
+evh:["Upcoming events","Abubuwan da ke tafe","Àwọn ìṣẹ̀lẹ̀ tó ń bọ̀","Emume na-abịa"],
+e0t:["Understanding ADHD: an open evening for families","Fahimtar ADHD: maraice a buɗe ga iyalai","Òye ADHD: ìrọ̀lẹ́ ṣíṣí sílẹ̀ fún àwọn ẹbí","Ịghọta ADHD: mgbede mepere emepe maka ezinụlọ"],
+e0d:["A plain-language talk and Q&A for parents, siblings and friends. Online and free.","Jawabi mai sauƙi da tambaya da amsa ga iyaye, ’yan’uwa da abokai. A yanar gizo, kyauta.","Ọ̀rọ̀ tó rọrùn àti ìbéèrè àti èsì fún òbí, ọmọ ìyá àti ọ̀rẹ́. Lórí ayélujára, ọ̀fẹ́.","Okwu dị mfe na ajụjụ na azịza maka nne na nna, ụmụnne na ndị enyi. Na ịntanetị, n’efu."],
+e1t:["Sensory-friendly meet-up for neurodivergent adults","Taron haɗuwa mai natsuwa ga manya masu bambancin kwakwalwa","Ìpàdé ìdákẹ́jẹ́ẹ́ fún àwọn àgbàlagbà tí ọpọlọ wọn yàtọ̀","Nzukọ udo maka ndị okenye ụbụrụ ha dị iche"],
+e1d:["A quieter, low-pressure space to meet others. Lagos, with an online room.","Wuri mai natsuwa, babu matsi, don saduwa da wasu. Legas, da kuma ɗakin yanar gizo.","Ibi ìdákẹ́jẹ́ẹ́, láìsí ìdààmú, láti pàdé àwọn ẹlòmíràn. Èkó, àti yàrá orí ayélujára.","Ebe dị jụụ, enweghị nrụgide, iji zute ndị ọzọ. Lagos, na ọnụ ụlọ ịntanetị."],
+e2t:["Inclusive classrooms workshop for teachers","Bita kan azuzuwa masu haɗa kowa ga malamai","Ìdánilẹ́kọ̀ọ́ kíláàsì tó gba gbogbo ènìyàn fún àwọn olùkọ́","Ogbako maka ụlọ klaasị na-anabata mmadụ niile maka ndị nkụzi"],
+e2d:["Practical adjustments teachers can make this term without special equipment.","Gyare-gyare masu sauƙi da malamai za su iya yi a wannan zangon karatu ba tare da kayan musamman ba.","Àwọn àtúnṣe tó rọrùn tí olùkọ́ lè ṣe ní ìgbà ẹ̀kọ́ yìí láìsí ohun èlò pàtàkì.","Mgbanwe dị mfe ndị nkụzi nwere ike ime n’oge a na-enweghị ngwá pụrụ iche."],
+bh:["The blog","Bulogi","Bulọọgi","Blọọgụ"],
+bh:["The blog","Bulogi","Bulọọgi","Blọọgụ"],
+bl:["Plain-language articles on neurodiversity. Each one names the sources behind it.","Labarai masu sauƙi game da bambancin kwakwalwa. Kowanne yana bayyana tushensa.","Àwọn àpilẹ̀kọ tó rọrùn nípa oríṣiríṣi ọpọlọ. Ọ̀kọ̀ọ̀kan ń dárúkọ orísun rẹ̀.","Edemede dị mfe banyere ọdịiche n’ụbụrụ. Nke ọ bụla na-ekwu isi iyi ya."],
+p0g:["Basics","Tushe","Ìpìlẹ̀","Ntọala"],p1g:["Education","Ilimi","Ẹ̀kọ́","Agụmakwụkwọ"],p2g:["Work","Aiki","Iṣẹ́","Ọrụ"],p3g:["Support","Tallafi","Àtìlẹ́yìn","Nkwado"],
+p0t:["Neurodiverse or neurodivergent? The words matter","Neurodiverse ko neurodivergent? Kalmomin na da muhimmanci","Neurodiverse tàbí neurodivergent? Àwọn ọ̀rọ̀ náà ṣe pàtàkì","Neurodiverse ka neurodivergent? Okwu ndị a dị mkpa"],
+p0d:["Two similar words with different meanings, and why we use both.","Kalmomi biyu masu kama da juna amma ma’anoninsu daban, da dalilin da ya sa muke amfani da su duka.","Ọ̀rọ̀ méjì tó jọra ṣùgbọ́n ìtumọ̀ wọn yàtọ̀, àti ìdí tí a fi ń lò méjèèjì.","Okwu abụọ yiri ibe ha mana nwere nkọwa dị iche, na ihe mere anyị ji eji ha abụọ."],
+p1t:["Five signs a classroom isn’t working for a neurodivergent student","Alamu biyar da ke nuna ajin karatu bai dace da ɗalibi mai bambancin kwakwalwa ba","Àmì márùn-ún tí kíláàsì kò bá akẹ́kọ̀ọ́ tí ọpọlọ rẹ̀ yàtọ̀ mu","Ihe ịrịba ama ise na-egosi na klaasị adịghị arụ ọrụ maka nwa akwụkwọ ụbụrụ ya dị iche"],
+p1d:["Often it is not about effort. It is about the environment.","Sau da yawa ba game da ƙoƙari ba ne. Yanayi ne.","Ó pọ̀ ìgbà, kì í ṣe nípa ìsapá. Àyíká ni.","Ọtụtụ oge, ọ bụghị banyere mgbalị. Gburugburu ya bụ."],
+p2t:["How to support a neurodivergent colleague","Yadda za a tallafa wa abokin aiki mai bambancin kwakwalwa","Bí a ṣe lè ṣe àtìlẹ́yìn fún alábàáṣiṣẹ́ tí ọpọlọ rẹ̀ yàtọ̀","Otu esi akwado onye ọrụ ibe ụbụrụ ya dị iche"],
+p2d:["Small, specific adjustments, agreed with the person, go a long way.","Ƙananan gyare-gyare na musamman, da aka amince da mutumin, na taimakawa sosai.","Àwọn àtúnṣe kékeré tó ṣe pàtó, tí a gbà pẹ̀lú ẹni náà, ń ṣe ànfàní púpọ̀.","Mgbanwe nta doro anya, nke e kwekọrịtara na onye ahụ, na-enye aka nke ukwuu."],
+p3t:["If you think your child may be neurodivergent, where to start","Idan kana tsammanin yaronka yana da bambancin kwakwalwa, ga inda za ka fara","Tí o bá rò pé ọmọ rẹ lè ní ọpọlọ tó yàtọ̀, níbi tí o ti lè bẹ̀rẹ̀","Ọ bụrụ na ị chere na nwa gị nwere ụbụrụ dị iche, ebe ị ga-esi malite"],
+p3d:["A calm first-steps guide for parents and carers.","Jagorar matakan farko cikin natsuwa ga iyaye da masu kulawa.","Ìtọ́sọ́nà ìgbésẹ̀ àkọ́kọ́ ní ìdákẹ́jẹ́ẹ́ fún òbí àti olùtọ́jú.","Ntụziaka usoro mbụ n’udo maka nne na nna na ndị na-elekọta."],
+back:["Back to the blog","Koma bulogi","Padà sí bulọọgi","Laghachi na blọọgụ"],
+src:["Source","Tushe","Orísun","Isi iyi"],
+note:["","Wannan labarin yana cikin Turanci a yanzu.","Àpilẹ̀kọ yìí wà ní èdè Gẹ̀ẹ́sì fún ìgbà díẹ̀.","Edemede a dị n’asụsụ Bekee ugbu a."],
+ch:["Find your people, in your state.","Nemo mutanenka a jiharka.","Wá àwọn ènìyàn rẹ ní ìpínlẹ̀ rẹ.","Chọta ndị gị n’steeti gị."],
+cl:["“Specs” are the neurodivergent people and allies who make up Nurospectrum. Choose your state to join its community.","“Specs” su ne masu bambancin kwakwalwa da abokan tafiyarsu a Nurospectrum. Zaɓi jiharka don shiga al’ummarta.","“Specs” ni àwọn tí ọpọlọ wọn yàtọ̀ àti àwọn alátìlẹ́yìn wọn ní Nurospectrum. Yan ìpínlẹ̀ rẹ láti darapọ̀ mọ́ àwùjọ rẹ̀.","“Specs” bụ ndị ụbụrụ ha dị iche na ndị na-akwado ha na Nurospectrum. Họrọ steeti gị ka ị sonye n’obodo ya."],
+cs:["Select a state above to begin.","Zaɓi jiha a sama don farawa.","Yan ìpínlẹ̀ lókè láti bẹ̀rẹ̀.","Họrọ steeti n’elu ka ị malite."],
+cx:["community","al’umma","àwùjọ","obodo"],
+cp:["Meet others, share what works and hear about local events. Tell us how you would like to take part.","Ku haɗu da wasu, ku raba abin da ke aiki, ku ji labarin taruka a yankinku. Faɗa mana yadda kake son shiga.","Pàdé àwọn ẹlòmíràn, pín ohun tó ń ṣiṣẹ́, kí o sì gbọ́ nípa àwọn ìpàdé àdúgbò. Sọ fún wa bí o ṣe fẹ́ kópa.","Zute ndị ọzọ, kerịta ihe na-arụ ọrụ, ma nụ banyere emume dị nso. Gwa anyị otu ị chọrọ isi sonye."],
+fn:["Your name","Sunanka","Orúkọ rẹ","Aha gị"],
+fc:["Email or WhatsApp number","Imel ko lambar WhatsApp","Ímeèlì tàbí nọ́mbà WhatsApp","Email ma ọ bụ nọmba WhatsApp"],
+fr:["I am joining as","Ina shiga a matsayin","Mo ń darapọ̀ gẹ́gẹ́ bí","Ana m esonye dị ka"],
+roles:[["A neurodivergent person","A parent, carer or family member","A teacher or professional","An ally"],["Mai bambancin kwakwalwa","Iyaye, mai kula ko dangi","Malami ko ƙwararre","Aboki mai goyon baya"],["Ẹni tí ọpọlọ rẹ̀ yàtọ̀","Òbí, olùtọ́jú tàbí ẹbí","Olùkọ́ tàbí ọ̀jọ̀gbọ́n","Alátìlẹ́yìn"],["Onye ụbụrụ ya dị iche","Nne ma ọ bụ nna, onye na-elekọta ma ọ bụ ezinụlọ","Onye nkụzi ma ọ bụ ọkachamara","Onye na-akwado"]],
+jb:["Join the community","Shiga al’umma","Darapọ̀ mọ́ àwùjọ","Sonye n’obodo"],
+wl:["Welcome, {n}. We will contact you about the {s} community soon.","Barka da zuwa, {n}. Za mu tuntube ka game da al’ummar {s} nan ba da daɗewa ba.","Káàbọ̀, {n}. A ó kàn sí ọ láìpẹ́ nípa àwùjọ {s}.","Nnọọ, {n}. Anyị ga-akpọtụrụ gị n’oge na-adịghị anya banyere obodo {s}."],
+ph:["Build this with us.","Mu gina wannan tare.","Ẹ jẹ́ ká kọ́ èyí papọ̀.","Ka anyị jikọta wuo nke a."],
+pl:["Nurospectrum is growing a national movement. We welcome organisations and individuals who share our vision of an inclusive Nigeria.","Nurospectrum na gina motsi na ƙasa baki ɗaya. Muna maraba da ƙungiyoyi da mutane masu irin hangenmu na Najeriya mai haɗa kowa.","Nurospectrum ń kọ́ ìgbésẹ̀ orílẹ̀-èdè. A gba àwọn ẹgbẹ́ àti ẹnìkọ̀ọ̀kan tó ní ìran kan náà pẹ̀lú wa káàbọ̀.","Nurospectrum na-ewu mmegharị n’ofe obodo. Anyị na-anabata òtù na ndị mmadụ nwere otu ọhụụ anyị nke Naịjirịa na-anabata mmadụ niile."],
+q1t:["Partners","Abokan hulɗa","Àwọn alábàáṣiṣẹ́pọ̀","Ndị mmekọ"],
+q1d:["Schools, hospitals, NGOs, employers and media who want to run programmes or events with us.","Makarantu, asibitoci, ƙungiyoyi, ma’aikata da kafafen yaɗa labarai da ke son gudanar da shirye-shirye tare da mu.","Ilé-ìwé, ilé-ìwòsàn, àjọ aláìṣe-fún-èrè, agbanisíṣẹ́ àti ilé-iṣẹ́ ìròyìn tó fẹ́ ṣe àwọn ètò pẹ̀lú wa.","Ụlọ akwụkwọ, ụlọ ọgwụ, òtù, ndị goro ọrụ na mgbasa ozi chọrọ ịrụkọ ọrụ n’atụmatụ na anyị."],
+q2t:["Investors and funders","Masu zuba jari da masu tallafi","Àwọn olùdókòwò àti olùtọ́jú owó","Ndị na-etinye ego na ndị na-akwado"],
+q2d:["Support the platform, state communities and awareness work that reach neurodivergent Nigerians.","Tallafa wa dandalin, al’ummomin jihohi da aikin wayar da kai.","Ṣe àtìlẹ́yìn pèpéle náà, àwọn àwùjọ ìpínlẹ̀ àti iṣẹ́ ìfọ̀rọ̀jíṣẹ́.","Kwado ikpo okwu a, obodo steeti na ọrụ ịmara ọha."],
+q3t:["Contributors","Masu ba da gudummawa","Àwọn olùkópa","Ndị na-enye aka"],
+q3d:["Writers, clinicians, educators, designers and developers who can share their skills and knowledge.","Marubuta, likitoci, malamai, masu zane da masu shirya manhaja masu son raba ƙwarewa.","Òǹkọ̀wé, dókítà, olùkọ́, apẹ̀rẹ̀ àti olùgbéséwé tó lè pín ọgbọ́n wọn.","Ndị edemede, dọkịta, ndị nkụzi, ndị ode na ndị mmepụta sọftụwia nwere ike keta ọgụgụ isi ha."],
+sh:["Start a conversation","Fara tattaunawa","Bẹ̀rẹ̀ ìjíròrò","Malite mkparịta ụka"],
+sh:["Start a conversation","Fara tattaunawa","Bẹ̀rẹ̀ ìjíròrò","Malite mkparịta ụka"],
+fo:["Organisation (optional)","Ƙungiya (zaɓi)","Ẹgbẹ́ (àìgbọdọ̀máṣe)","Òtù (nhọrọ)"],
+fe:["Email","Imel","Ímeèlì","Email"],
+fi:["I would like to","Ina so in","Mo fẹ́","Achọrọ m"],
+io:[["Partner with Nurospectrum","Invest or fund","Contribute my skills"],["Haɗa kai da Nurospectrum","Zuba jari ko tallafa","Ba da gudummawar ƙwarewa"],["Bá Nurospectrum ṣiṣẹ́ pọ̀","Náwó tàbí ṣe àtìlẹ́yìn owó","Pín ọgbọ́n mi"],["Soro Nurospectrum rụkọọ ọrụ","Tinye ego ma ọ bụ kwado","Keta ọgụgụ isi m"]],
+fm:["Message","Saƙo","Ìfiránṣẹ́","Ozi"],
+sb:["Send message","Aika saƙo","Fi ìfiránṣẹ́ ránṣẹ́","Zipu ozi"],
+th:["Thank you, {n}. We will reply to {e} soon.","Na gode, {n}. Za mu amsa zuwa {e} nan ba da daɗewa ba.","O ṣeun, {n}. A ó dá {e} lóhùn láìpẹ́.","Daalụ, {n}. Anyị ga-azaghachi {e} n’oge na-adịghị anya."],
+ft:["Nurospectrum (Nurospec) · Lagos, Nigeria · Awareness, education and community for neurodivergent minds.","Nurospectrum (Nurospec) · Legas, Najeriya · Wayar da kai, ilimi da al’umma domin masu bambancin kwakwalwa.","Nurospectrum (Nurospec) · Èkó, Nàìjíríà · Ìfọ̀rọ̀jíṣẹ́, ẹ̀kọ́ àti àwùjọ fún àwọn ọkàn tí ó yàtọ̀.","Nurospectrum (Nurospec) · Lagos, Naịjirịa · Mmara ọha, agụmakwụkwọ na obodo maka ọgụgụ isi dị iche."]
+};
+function t(k){return D[k][LI]}
+function f2(k,o){var r=t(k);for(var x in o)r=r.replace("{"+x+"}",o[x]);return r}
+function path(i,c){return '<div class="path" style="--c:'+c+'"><h3>'+t("a"+i+"t")+'</h3><p>'+t("a"+i+"d")+'</p><a href="#'+["community","blog","partners"][i-1]+'">'+t("a"+i+"l")+'</a></div>'}
+function home(){
+ var ev=EVENTS.map(function(e,i){return '<div class="ev" style="--c:'+e.c+'"><div class="date">'+e.d+'<small>'+e.m+'</small></div><div><h3>'+t("e"+i+"t")+'</h3><p>'+t("e"+i+"d")+'</p></div></div>'}).join("");
+ app.innerHTML='<div class="wrap"><section class="sec"><h1>'+t("h1")+'</h1><p class="lede">'+t("lede")+'</p><div class="cta"><a class="btn" href="#community">'+t("joinb")+'</a><a class="btn alt" href="#blog">'+t("learnb")+'</a></div>'+weave()+'</section>'+
+ '<section class="paths">'+path(1,COL[0])+path(2,COL[1])+path(3,COL[2])+'</section>'+
+ '<section class="sec two"><div><h2>'+t("about")+'</h2><p>'+t("ab1")+'</p></div><div><p>'+t("ab2")+'</p></div></section></div>'+
+ '<section class="statement"><div class="wrap sec"><p><b>'+t("ml")+'</b><br>'+t("mt")+'</p><p><b>'+t("vl")+'</b><br>'+t("vt")+'</p></div></section><div class="wrap">'+
+ '<section class="sec"><h2>'+t("evh")+'</h2>'+ev+'</section></div>';
+}
+function blog(){
+ app.innerHTML='<div class="wrap"><section class="sec"><h1>'+t("bh")+'</h1><p class="lede">'+t("bl")+'</p></section>'+POSTS.map(function(p,i){return '<a class="post" style="--c:'+p.c+'" href="#'+p.id+'"><span class="tag">'+t("p"+i+"g")+'</span><h2>'+t("p"+i+"t")+'</h2><p>'+t("p"+i+"d")+'</p></a>'}).join("")+'<div class="sec"></div></div>';
+}
+function post(p){
+ var i=POSTS.indexOf(p);
+ app.innerHTML='<div class="wrap"><article class="read sec" style="--c:'+p.c+'"><button class="back" type="button" onclick="location.hash=\'blog\'">'+t("back")+'</button><span style="font:600 .9rem var(--head);color:var(--c)">'+t("p"+i+"g")+'</span><h1>'+t("p"+i+"t")+'</h1>'+(LI?'<div class="note" lang="en">'+t("note")+'</div>':'')+'<div lang="en">'+p.b.map(function(x,j){return '<p>'+x+'</p>'+(j===1?'<div class="note">'+p.n+'</div>':'')}).join("")+'</div><div class="src"><b>'+t("src")+':</b> '+p.s+'</div></article></div>';
+}
+function community(){
+ app.innerHTML='<div class="wrap"><section class="sec"><h1>'+t("ch")+'</h1><p class="lede">'+t("cl")+'</p><div class="states" id="states" role="group"></div><div id="join"></div></section></div>';
+ var box=$("#states");
+ STATES.forEach(function(s){var b=document.createElement("button");b.type="button";b.className="chip";b.textContent=s;b.setAttribute("aria-pressed",String(s===chosen));b.onclick=function(){chosen=s;community();document.querySelectorAll(".chip").forEach(function(x){if(x.textContent===s)x.focus()});$("#join").scrollIntoView({block:"nearest"})};box.appendChild(b)});
+ if(chosen){
+  var ro=D.roles[LI].map(function(r){return '<option>'+r+'</option>'}).join("");
+  $("#join").innerHTML='<div class="panel"><h2></h2><p>'+t("cp")+'</p><form id="jf"><label>'+t("fn")+'<input name="n" required autocomplete="name"></label><label>'+t("fc")+'<input name="c" required></label><label>'+t("fr")+'<select name="r">'+ro+'</select></label><button class="btn" type="submit">'+t("jb")+'</button><div class="out" id="out" role="status"></div></form></div>';
+  $("#join h2").textContent=chosen+" "+t("cx");
+  $("#jf").onsubmit=function(e){e.preventDefault();$("#out").textContent=f2("wl",{n:e.target.n.value.trim(),s:chosen})};
+ } else $("#join").innerHTML='<p class="lede">'+t("cs")+'</p>';
+}
+function partners(){
+ var io=D.io[LI].map(function(r){return '<option>'+r+'</option>'}).join("");
+ function q(i,c){return '<div class="path" style="--c:'+c+'"><h3>'+t("q"+i+"t")+'</h3><p>'+t("q"+i+"d")+'</p></div>'}
+ app.innerHTML='<div class="wrap"><section class="sec"><h1>'+t("ph")+'</h1><p class="lede">'+t("pl")+'</p></section><section class="paths">'+q(1,COL[0])+q(2,COL[2])+q(3,COL[3])+'</section><section class="sec"><h2>'+t("sh")+'</h2><form id="pf"><label>'+t("fn")+'<input name="n" required autocomplete="name"></label><label>'+t("fo")+'<input name="o" autocomplete="organization"></label><label>'+t("fe")+'<input name="e" type="email" required autocomplete="email"></label><label>'+t("fi")+'<select name="t">'+io+'</select></label><label>'+t("fm")+'<textarea name="m" required></textarea></label><button class="btn" type="submit">'+t("sb")+'</button><div class="out" id="out" role="status"></div></form></section></div>';
+ $("#pf").onsubmit=function(e){e.preventDefault();$("#out").textContent=f2("th",{n:e.target.n.value.trim(),e:e.target.e.value.trim()})};
+}
+function route(){
+ var k=location.hash.replace("#","")||"home",cur=k,p=POSTS.filter(function(x){return x.id===k})[0];
+ if(p){cur="blog";post(p)}else if(k==="blog")blog();else if(k==="community")community();else if(k==="partners")partners();else{cur="home";home()}
+ document.querySelectorAll("#nav a").forEach(function(a){if(a.dataset.p===cur)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+ document.querySelectorAll("#nav a").forEach(function(a,i){a.textContent=D.nav[LI][i]});$("#calm").textContent=t("calm");$("#foot").textContent=t("ft");document.documentElement.lang=LANGS[LI];document.title=(cur==="home"?"":cur[0].toUpperCase()+cur.slice(1)+" · ")+"Nurospectrum";
+ window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);route();
+$("#lang").onchange=function(){LI=+this.value;route()};
+$("#calm").onclick=function(){var on=!document.body.hasAttribute("data-calm");if(on)document.body.setAttribute("data-calm","");else document.body.removeAttribute("data-calm");this.setAttribute("aria-pressed",String(on))};
+</script>
+</body>
+</html>
